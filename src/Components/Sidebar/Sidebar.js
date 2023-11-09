@@ -84,7 +84,7 @@ const Sidebar = () => {
         <ul className="nav-list" >
 
           <li>
-            <Link to={'/home'}>
+            <Link to={'/'}>
               <a >
                 <i className="bx bx-grid-alt"></i>
                 <span className="link_name">Home</span>
