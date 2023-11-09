@@ -44,7 +44,7 @@ const Sidebar = () => {
     // Perform any necessary logout logic here
   
     // Redirect to the login page
-    window.location.href = '/'; // Assuming '/login' is the route for your login page
+    window.location.href = 'https://carbookingadmin.vercel.app'; // Assuming '/login' is the route for your login page
   };
 
 // session tracking with login logout 
