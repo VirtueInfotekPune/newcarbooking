@@ -38,14 +38,29 @@ function AddPayment() {
   const [error, setError] = useState('');
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+  const { name, value } = event.target;
+
+  if (name === 'advance_Amount') {
+    // Parse advance amount as a float
+    const advanceAmount = parseFloat(value);
+
+    // Calculate remaining amount
+    const remainingAmount = formData.total_Amount - advanceAmount;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+      remaining_Amount: remainingAmount,
+    }));
+  } else {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  // };
-  
+  }
 
+
+  
 
   if (name === 'closing_km' || name === 'starting_Km') {
     // Parse values as floats
@@ -60,8 +75,7 @@ function AddPayment() {
         total_Km: totalKm.toString(), // Update the total_Km field
       }));
     }
-  }
-  if (name === 'closing_Time' || name === 'starting_Time') {
+  } else if (name === 'closing_Time' || name === 'starting_Time') {
     // Calculate the total hours
     const closingTime = formData.closing_Time;
     const startingTime = formData.starting_Time;
@@ -148,7 +162,7 @@ function AddPayment() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:7000/api/customer-payment', {
+      const response = await fetch('https://carbooking-backend-fo78.onrender.com/api/customer-payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -526,13 +540,14 @@ function AddPayment() {
                         <div className="form-group">
                           <label>Advance Amount</label>
                           <input
-                            type="number"
-                            className="form-control"
-                            name="advance_Amount"
-                            placeholder="Enter Advance Amount"
-                            value={formData.advance_Amount}
-                            onChange={handleChange}
-                          />
+  type="number"
+  className="form-control"
+  name="advance_Amount"
+  placeholder="Enter Advance Amount"
+  value={formData.advance_Amount}
+  onChange={handleChange}
+/>
+
                         </div>
                       </div>
                     </div>

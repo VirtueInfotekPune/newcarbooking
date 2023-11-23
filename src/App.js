@@ -35,6 +35,7 @@ import AddDriver from './Components/Driver/AddDriver';
 import ViewDriver from './Components/Driver/ViewDriver';
 import ViewCustomerPayment from './Components/AddPayment/ViewCustomerPayment';
 import ViewDriverDetails from './Components/StartEndDetails/ViewDriverDetails'
+import Customer from './Components/CustomerEnquiry/Customer';
 
 
 
@@ -48,9 +49,9 @@ function App() {
   <Router>
    
   <Routes>
-    {/* <Route path='/' element={<Login/>}/>
-    <Route path='/signup' element={< Signup/>} /> */}
-    <Route path='/' element={<Home/>} />
+    {/* <Route path='/' element={<Login/>}/> */}
+    {/* <Route path='/signup' element={< Signup/>} /> */}
+    <Route path='/' element={<Home/>} />  
     <Route path='/sharedetails' element={<ShareDetails/>}/>
     <Route path='/viewsharedetails' element={<ViewShareDetails/>} />
     <Route path='/startenddetails' element={<Startenddetails/>}/>
@@ -60,8 +61,8 @@ function App() {
     <Route path='/viewupdateduty'  element={<ViewUpdateDuty/>}/>
     <Route path='/addpayment'  element={<AddPayment/>}/>
     <Route path='/viewcustomerpayment'  element={<ViewCustomerPayment/>}/>
-    <Route path='/customerrate'  element={<CustomerRate/>}/>
-    <Route path='/viewcustomerrate'  element={<ViewCustomerRate/>}/>
+    <Route path='/companyrate'  element={<CustomerRate/>}/>
+    <Route path='/viewcompanyrate'  element={<ViewCustomerRate/>}/>
     <Route path='/vendorrate'  element={<VendorRate/>}/>
     <Route path='/viewvendorrate'  element={<ViewVendorRate/>}/>
     <Route path='/customerenquiry'  element={<CustomerEnquiry/>}/>
@@ -82,6 +83,7 @@ function App() {
     <Route path='/adddriver' element={<AddDriver/>} />
     <Route path='/viewdriver' element={<ViewDriver/>} />
     <Route path='/viewdetailsfromdriver' element={<ViewDriverDetails/>} />
+    <Route path='/Customer' element={<Customer/>} />
 
 
   </Routes>

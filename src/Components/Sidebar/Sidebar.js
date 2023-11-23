@@ -44,15 +44,15 @@ const Sidebar = () => {
     // Perform any necessary logout logic here
   
     // Redirect to the login page
-    window.location.href = 'https://carbookingadmin.vercel.app'; // Assuming '/login' is the route for your login page
+    window.location.href = '/'; // Assuming '/login' is the route for your login page
   };
 
 // session tracking with login logout 
   
   // const handleLogout = () => {
   //   try {
-  //     // http://localhost:7000/api/user-login/logout
-  //     axios.get('http://localhost:7000/api/user-login/logout', { withCredentials: true }) // Assuming your server is running on the same host
+  //     // https://carbooking-backend-fo78.onrender.com/api/user-login/logout
+  //     axios.get('https://carbooking-backend-fo78.onrender.com/api/user-login/logout', { withCredentials: true }) // Assuming your server is running on the same host
   //       .then((res) => {
   //         console.log(res)
   //         localStorage.removeItem('user');
@@ -84,7 +84,7 @@ const Sidebar = () => {
         <ul className="nav-list" >
 
           <li>
-            <Link to={'/'}>
+            <Link to={'/home'}>
               <a >
                 <i className="bx bx-grid-alt"></i>
                 <span className="link_name">Home</span>
@@ -167,13 +167,13 @@ const Sidebar = () => {
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">
-                <Link to={'/customerrate'}>
-                  Customer Rate
+                <Link to={'/companyrate'}>
+                  Company Rate
                 </Link>
               </a></li>
               <li><a class="dropdown-item" href="#">
-                <Link to={'/viewcustomerrate'}>
-                  View Customer Rate
+                <Link to={'/viewcompanyrate'}>
+                  View Company Rate
                 </Link>
               </a></li><hr />
               <li><a class="dropdown-item" href="#">
